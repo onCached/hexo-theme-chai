@@ -1,0 +1,41 @@
+a, a:active {
+    position: relative;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+a.nav-list-link.active,
+a.nav-list-link:hover,
+a.post-title-link:hover {
+    border-bottom: 2px solid $primary-color;
+}
+
+hr {
+    border: 0;
+}
+
+code {
+    margin: 0 2px;
+    padding: 3px 5px;
+    color: #e96900;
+    border-radius: 2px;
+    white-space: inherit;
+}
+
+table {
+    width: 100%;
+    thead {
+        background-color: #ddd;
+        th {
+            padding: 5px;
+        }
+    }
+    tbody {
+        tr:nth-child(2n) {
+            background-color: #eee;
+        }
+        td {
+            padding: 5px;
+        }
+    }
+}

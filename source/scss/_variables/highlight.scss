@@ -1,0 +1,22 @@
+// Highlight
+$highlight: (
+    'font-size':   .8rem,
+    'border':      1px solid #575757,
+    'line-height': 1.2em
+);
+
+// Highlight colors
+$highlight-colors: (
+    'background': #262827,
+    'foreground': #c5c8c6,
+    'string': #fac863,
+    'keyword': #6699CC,
+    'variable': #CDD3DE,
+    'comment': #898988,
+    'built-in': #C594C5,
+    'title': #5FB3B3,
+    'tag': #F99157,
+    'attribute': #6699CC,
+    'addition': #99C794,
+    'deletion': #EC5f67
+);

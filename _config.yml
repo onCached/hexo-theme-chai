@@ -1,0 +1,17 @@
+menu:
+    blog: /
+    rss: /atom.xml
+    github: https://github.com/oncached
+
+favicon: http://7xoq24.com1.z0.glb.clouddn.com/favicon.png
+logo: http://7xoq24.com1.z0.glb.clouddn.com/favicon.png
+
+# comment
+# e.g disqus: seansun
+disqus: 
+duoshuo: 
+
+# google-analytics:
+ga: UA-70833299-1
+# baidu-analytics:
+ba: 

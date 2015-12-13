@@ -1,0 +1,626 @@
+.post {
+    padding-top: 1em;
+}
+
+.post-block {
+    .post-title {
+        margin: 0.65em 0;
+        color: #2c3e50;
+        font-size: 1.5em;
+    }
+
+    .post-time {
+        color: #7f8c8d;
+        margin: 1.2em 0;
+    }
+}
+
+.post-content {
+    h1, h2, h3, h4, h5, h6 {
+        position: relative;
+        margin: 1em 0;
+        &:before {
+            color: $primary-color;
+            position: absolute;
+            left: -0.7em;
+            top: 0;
+            font-weight: bold;
+            transform: translateX(-100%);
+        }
+    }
+
+    h1 {
+        &:before {
+            content: "#";
+        }
+    }
+
+    h2 {
+        &:before {
+            content: "##";
+        }
+    }
+
+    h3 {
+        &:before {
+            content: "###";
+        }
+    }
+
+    h4 {
+        &:before {
+            content: "####";
+        }
+    }
+
+    h5 {
+        &:before {
+            content: "#####";
+        }
+    }
+
+    h6 {
+        &:before {
+            content: "######";
+        }
+    }
+
+    a {
+        color: $primary-color;
+    }
+    blockquote {
+        margin: 2em 0;
+        padding-left: 20px;
+        border-left: 4px solid $primary-color;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        margin: 1em auto;
+    }
+    .tip {
+        position: relative;
+        margin: 2em 0;
+        padding: 12px 24px 12px 30px;
+        border-left: 4px solid #f66;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-color: #f8f8f8;
+        br {
+            display: none;
+        }
+    }
+    .tip:before {
+        position: absolute;
+        top: 14px;
+        left: -12px;
+        content: "!";
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #f66;
+        font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    }
+}
+
+figure.highlight {
+    background:    map-get($highlight-colors, background);
+    margin:        10px 0;
+    border-radius: 3px;
+    line-height:   map-get($highlight, line-height);
+    color:         map-get($highlight-colors, foreground);
+    border:        map-get($highlight, border);
+    overflow:      hidden;
+
+    table {
+        display:    block;
+        width:      100%;
+        margin-bottom: 0;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    // Reset for tag `pre` and  for class `.gutter`, `.code`, `.tag`
+    pre,
+    .gutter,
+    .code,
+    .tag {
+        font-family: #{map-get($font-families, 'monospace')};
+        border:      none;
+        padding:     0;
+        margin:      0;
+        // To override cursor attribute of `.tag` components
+        cursor:      text;
+    }
+    // Meta bar which contains name of the file and his link
+    figcaption {
+        font-size:     map-get($highlight, font-size);
+        padding:       10px 15px;
+        margin:        0;
+        background:    #f7f7f7;
+        border-bottom: map-get($highlight, border);
+        color:         #999999;
+
+        a {
+            float: right;
+        }
+    }
+    // Gutter which contains line numbers
+    .gutter {
+        background:   map-get($highlight-colors, background);
+        border-right: map-get($highlight, border);
+        padding:      0.3em 0.5em;
+
+        .line {
+            color: #aaaaaa;
+        }
+    }
+    // Code container
+    .code {
+        padding: 0.3em 0.3em 0.3em 1em;
+    }
+    // All lines in gutter and code container
+    .line {
+        height:    map-get($highlight, line-height);
+        font-size: map-get($highlight, font-size);
+    }
+}
+
+// Gist
+.gist {
+    .line,
+    .line-number {
+        font-family: map-get($font-families, 'highlight');
+        font-size:   1em;
+        margin:      0 0 5px 0;
+    }
+}
+
+// Highlight code coloration
+.highlight {
+    // General
+    .comment {
+        color: map-get($highlight-colors, comment);
+    }
+    .string {
+        color: map-get($highlight-colors, string);
+    }
+    .keyword {
+        color: map-get($highlight-colors, keyword);
+    }
+    // ApacheConf
+    &.apacheconf .code {
+        .common,
+        .cbracket,
+        .keyword {
+            color: map-get($highlight-colors, built-in);
+        }
+        .sqbracket {
+            color: map-get($highlight-colors, string);
+        }
+        .tag {
+            color: map-get($highlight-colors, tag);
+        }
+    }
+    // Bash
+    &.bash .code {
+        .shebang {
+            color: map-get($highlight-colors, comment);
+        }
+        .literal,
+        .built_in {
+            color: map-get($highlight-colors, built-in);
+        }
+        .variable {
+            color: map-get($highlight-colors, foreground);
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+    }
+    // coffescript
+    &.coffeescript .code {
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .literal,
+        .built_in,
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+        .reserved,
+        .attribute {
+            color: map-get($highlight-colors, attribute);
+        }
+        .subst,
+        .regexp {
+            color: map-get($highlight-colors, string);
+        }
+    }
+    // C/C++
+    &.cpp .code,
+    &.c .code {
+        .preprocessor {
+            color: map-get($highlight-colors, string);
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .number,
+        .built_in {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // C#
+    &.cs .code {
+        .preprocessor,
+        .preprocessor .keyword {
+            color: map-get($highlight-colors, foreground);
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .number,
+        .built_in {
+            color: map-get($highlight-colors, built-in);
+        }
+        .xmlDocTag {
+            color: map-get($highlight-colors, tag);
+        }
+    }
+    // CSS
+    &.css .code {
+        .at_rule,
+        .important {
+            color: map-get($highlight-colors, keyword);
+        }
+        .attribute,
+        .hexcolor,
+        .number,
+        .function {
+            color: map-get($highlight-colors, built-in);
+        }
+        .attr_selector,
+        .value {
+            color: map-get($highlight-colors, foreground);
+        }
+        .id,
+        .class,
+        .pseudo {
+            color: map-get($highlight-colors, title);
+        }
+        .tag {
+            color: map-get($highlight-colors, tag);
+        }
+    }
+    // Diff
+    &.diff .code {
+        .chunk {
+            color:       map-get($highlight-colors, title);
+            font-weight: bold;
+        }
+        .addition {
+            color:            map-get($highlight-colors, addition);
+        }
+        .deletion {
+            color:            map-get($highlight-colors, deletion);
+        }
+    }
+    // HTTP
+    &.http .code {
+        .literal,
+        .attribute {
+            color: map-get($highlight-colors, built-in);
+        }
+        .request {
+            color: map-get($highlight-colors, keyword);
+        }
+    }
+    // INI
+    &.ini .code {
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .setting {
+            color: map-get($highlight-colors, keyword);
+        }
+        .value,
+        .keyword {
+            color: map-get($highlight-colors, foreground);
+        }
+    }
+    // JAVA
+    &.java .code {
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .javadoc {
+            color: map-get($highlight-colors, comment);
+        }
+        .javadoctag {
+            color: map-get($highlight-colors, keyword);
+        }
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+        .params {
+            color: map-get($highlight-colors, attribute);
+        }
+    }
+    // JavaScript
+    &.javascript .code, &.js .code {
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .javadoc {
+            color: map-get($highlight-colors, comment);
+        }
+        .tag,
+        .javadoctag {
+            color: map-get($highlight-colors, keyword);
+        }
+        .tag .title {
+            color: map-get($highlight-colors, foreground);
+        }
+        .regexp {
+            color: map-get($highlight-colors, string);
+        }
+        .built_in,
+        .literal,
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // JSON
+    &.json .code {
+        .attribute {
+            color: map-get($highlight-colors, string);
+        }
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // Makefile
+    &.mak .code {
+        .constant {
+            color: map-get($highlight-colors, foreground);
+        }
+        .variable {
+            color: map-get($highlight-colors, string);
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .keyword {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // Markdown
+    &.md .code {
+        .value,
+        .link_label,
+        .strong,
+        .emphasis,
+        .blockquote {
+            color: map-get($highlight-colors, string);
+        }
+        .link_reference,
+        .code {
+            color: map-get($highlight-colors, built-in);
+        }
+        .link_url {
+            text-decoration: underline;
+        }
+    }
+    // Nginx
+    &.nginx .code {
+        .title {
+            color: map-get($highlight-colors, keyword);
+        }
+        .built_in {
+            color: map-get($highlight-colors, built-in);
+        }
+        .regexp,
+        .number {
+            color: map-get($highlight-colors, string);
+        }
+        .variable {
+            color: map-get($highlight-colors, foreground);
+        }
+    }
+    // Objective-C
+    &.objectivec .code {
+        .preprocessor {
+            color: map-get($highlight-colors, keyword);
+
+            .title {
+                color: map-get($highlight-colors, string);
+            }
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .literal,
+        .number,
+        .built_in {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // Perl
+    &.perl .code {
+        .sub {
+            color: map-get($highlight-colors, title);
+        }
+        .regexp {
+            color: map-get($highlight-colors, string);
+        }
+    }
+    // PHP
+    &.php .code {
+        .phpdoc {
+            color: map-get($highlight-colors, keyword);
+        }
+        .regexp {
+            color: map-get($highlight-colors, string);
+        }
+        .literal,
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+    }
+    // Python
+    &.python .code {
+        .decorator,
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // Ruby
+    &.ruby .code {
+        .parent,
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .prompt,
+        .constant,
+        .number,
+        .subst .keyword,
+        .symbol {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // SQL
+    &.sql {
+        .built_in {
+            color: map-get($highlight-colors, keyword);
+        }
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // XML, HTML
+    &.xml {
+        .tag {
+            color: map-get($highlight-colors, foreground);
+        }
+        .value {
+            color: map-get($highlight-colors, string);
+        }
+        .attribute {
+            color: map-get($highlight-colors, title);
+        }
+        .title {
+            color: map-get($highlight-colors, tag);
+        }
+    }
+    // Puppet
+    &.puppet {
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .function {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // LESS
+    &.less {
+        .tag,
+        .at_rule {
+            color: map-get($highlight-colors, keyword);
+        }
+        .number,
+        .hexcolor,
+        .function,
+        .attribute {
+            color: map-get($highlight-colors, built-in);
+        }
+        .built_in {
+            color: map-get($highlight-colors, string);
+        }
+        .id,
+        .pseudo,
+        .class {
+            color: map-get($highlight-colors, title);
+        }
+    }
+    // SCSS
+    &.scss {
+        .tag,
+        .at_rule,
+        .important {
+            color: map-get($highlight-colors, keyword);
+        }
+        .preprocessor,
+        .number,
+        .hexcolor,
+        .function,
+        .attribute {
+            color: map-get($highlight-colors, built-in);
+        }
+        .variable {
+            color: map-get($highlight-colors, foreground);
+        }
+        .built_in {
+            color: map-get($highlight-colors, string);
+        }
+        .id,
+        .pseudo,
+        .class {
+            color: map-get($highlight-colors, title);
+        }
+    }
+    // Stylus
+    &.stylus {
+        .at_rule {
+            color: map-get($highlight-colors, keyword);
+        }
+        .tag {
+            color: map-get($highlight-colors, tag);
+        }
+        .number,
+        .hexcolor,
+        .attribute,
+        .params {
+            color: map-get($highlight-colors, built-in);
+        }
+        .class,
+        .id,
+        .pseudo,
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+    }
+    // Go
+    &.go {
+        .typename {
+            color: map-get($highlight-colors, keyword);
+        }
+        .built_in,
+        .constant {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+    // Swift
+    &.swift {
+        .preprocessor {
+            color: map-get($highlight-colors, keyword);
+        }
+        .title {
+            color: map-get($highlight-colors, title);
+        }
+        .built_in,
+        .number {
+            color: map-get($highlight-colors, built-in);
+        }
+    }
+}

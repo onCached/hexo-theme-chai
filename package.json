@@ -1,0 +1,33 @@
+{
+  "name": "hexo-theme-chai",
+  "version": "0.1.0",
+  "description": "A hexo theme mixed a lot of design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oncached/hexo-theme-chai"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "chai"
+  ],
+  "author": "tsingchao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oncached/hexo-theme-chai/issues"
+  },
+  "homepage": "https://github.com/oncached/hexo-theme-chai#readme",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0"
+  },
+  "dependencies": {}
+}
